@@ -61,11 +61,22 @@ void Graph::addPoint(Point p)
     graphList.push_back(AdjacencyList(p));
 }
 
-void Graph::addAdjacentPoint(Point p, Point adjacent)
+void Graph::addAdjacentPoint(Point p, Point adjacent, int weight)
 {
     if(findPoint(p) == false)
     {
-      
+        AdjacencyList list = AdjacencyList(p);
+        list.addPoint(adjacent, weight);
+        
+       if(findPoint(adjacent))
+       {
+           graphList.push_back(list);
+       }
+       else
+       {
+           graphList.push_back(list);
+           addPoint(adjacent);
+       }
     }
     
 }

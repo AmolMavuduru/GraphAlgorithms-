@@ -15,10 +15,12 @@
 #include <vector>
 #include <iostream>
 
+//This class contains the implementation of a weighted graph
+
 class Graph
 {
 private:
-    std::vector<AdjacencyList> graphList;
+    std::vector<AdjacencyList> graphList; //This list is basically an adjacency list or a list of lists of adjacent points
     int size;
     
 public:
@@ -26,7 +28,7 @@ public:
     void clearGraph();
     void print();
     void addPoint(Point p);
-    void addAdjacentPoint(Point p, Point adjacent);
+    void addAdjacentPoint(Point p, Point adjacent, int weight);
     int getSize();
     bool findPoint(Point p);
     

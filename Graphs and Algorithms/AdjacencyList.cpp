@@ -34,9 +34,10 @@ AdjacencyList::AdjacencyList(Point p)
     headPoint = p;
 }
 
-void AdjacencyList::addPoint(Point p)
+void AdjacencyList::addPoint(Point p, int weight)
 {
     adjacentPoints.push_back(p);
+    weights.push_back(weight);
     numPoints++;
 }
 

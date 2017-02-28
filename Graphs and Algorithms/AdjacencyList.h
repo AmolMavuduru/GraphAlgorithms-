@@ -15,10 +15,11 @@ class AdjacencyList
 {
 private:
     std::vector<Point> adjacentPoints;
+    std::vector<int> weights;
     Point headPoint;
     int numPoints;
 public:
-    void addPoint(Point p);
+    void addPoint(Point p, int weight);
     AdjacencyList();
     AdjacencyList(std::vector<Point> pointsList);
     AdjacencyList(Point p);
