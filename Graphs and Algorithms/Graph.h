@@ -29,7 +29,7 @@ public:
     void print();
     void addPoint(Point p);
     void addAdjacentPoint(Point p, Point adjacent, int weight);
-    int getSize();
+    int getSize()const;
     bool findPoint(Point p);
     
     std::vector<AdjacencyList> getList();

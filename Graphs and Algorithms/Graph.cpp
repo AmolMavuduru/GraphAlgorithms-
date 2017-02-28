@@ -59,6 +59,7 @@ bool Graph::findPoint(Point p)
 void Graph::addPoint(Point p)
 {
     graphList.push_back(AdjacencyList(p));
+    size++;
 }
 
 void Graph::addAdjacentPoint(Point p, Point adjacent, int weight)
@@ -71,13 +72,23 @@ void Graph::addAdjacentPoint(Point p, Point adjacent, int weight)
        if(findPoint(adjacent))
        {
            graphList.push_back(list);
+           size++;
        }
        else
        {
            graphList.push_back(list);
+           size++;
            addPoint(adjacent);
+           size++;
        }
     }
     
 }
+
+int Graph::getSize()const
+{
+    return size;
+}
+
+
 
