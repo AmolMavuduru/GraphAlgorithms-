@@ -15,11 +15,20 @@
 Point::Point(std::string pName)
 {
     name = pName;
+    ptWeight = 0;
+    
+}
+
+Point::Point(std::string pName, int weight)
+{
+    name = pName;
+    ptWeight = weight;
 }
 
 Point::Point()
 {
     name = "";
+    ptWeight = 0;
 }
 
 std::string Point::pointName()
@@ -27,14 +36,9 @@ std::string Point::pointName()
     return name;
 }
 
-std::vector<std::string> Point::adjacent() const
+int Point::weight()
 {
-    return adjacentPoints;
-}
-
-void Point::addAdjacentPoint(std::string name)
-{
-    adjacentPoints.push_back(name);
+    return ptWeight;
 }
 
 bool Point::operator==(const Point& otherPoint)const

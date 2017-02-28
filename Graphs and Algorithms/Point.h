@@ -17,13 +17,14 @@ class Point
 {
 private:
     std::string name;
-    std::vector<std::string> adjacentPoints; //list of adjacent points
+    int ptWeight;
+    
 public:
     Point(std::string pName);
+    Point(std::string pName, int weight);
     Point();
     std::string pointName();
-    std::vector<std::string> adjacent() const; //returns list of all adjacent points
-    void addAdjacentPoint(std::string name);
+    int weight();
     
     bool operator==(const Point& otherPoint)const;
     

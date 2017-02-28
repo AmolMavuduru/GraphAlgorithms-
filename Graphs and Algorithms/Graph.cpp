@@ -90,5 +90,10 @@ int Graph::getSize()const
     return size;
 }
 
+std::vector<AdjacencyList> Graph::getList()
+{
+    return graphList;
+}
+
 
 
