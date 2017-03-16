@@ -36,13 +36,19 @@ void Dijkstra(Graph graph, Point start, Point end)
         
         sptSet.push_back(start);
         Point u = start;
+        int minWeight;
         
         while(sptSet.size() < graph.getSize())
         {
+            int minWeight = INT_MAX;
             int index = graph.pointIndex(u);
             
             for(int i = 1; i < graph.numAdjacentPoints(u); i++)
             {
+                AdjacencyList adjacents = graph.adjacentPoints(u);
+                
+                
+                
                 
             }
         }
