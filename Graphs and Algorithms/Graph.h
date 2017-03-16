@@ -31,6 +31,7 @@ public:
     void addAdjacentPoint(Point p, Point adjacent, int weight);
     int getSize()const;
     bool findPoint(Point p);
+    int pointIndex(Point p);
     
     std::vector<AdjacencyList> getList();
     

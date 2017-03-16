@@ -7,9 +7,24 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Point.h"
+#include "Graph.h"
+#include "AdjacencyList.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    
+  Point p = Point("A");
+  AdjacencyList list = AdjacencyList(p);
+  std::vector<AdjacencyList> graphList;
+  graphList.push_back(list);
+  
+  Graph g = Graph(graphList);
+  g.addAdjacentPoint(p, Point("B"), 3);
+  g.addAdjacentPoint(p, Point("C"), 4);
+  g.addAdjacentPoint(Point("B"), p, 2);
+
+
+    
     return 0;
 }

@@ -56,6 +56,25 @@ bool Graph::findPoint(Point p)
     return found;
 }
 
+int Graph::pointIndex(Point p)
+{
+    int index = -1;
+    bool found = false;
+    
+    for(int i = 0; i < graphList.size(); i++)
+    {
+        if(graphList.at(i).head() == p)
+        {
+            found = true;
+            index = i;
+        }
+    }
+    
+    return index;
+    
+}
+
+
 void Graph::addPoint(Point p)
 {
     graphList.push_back(AdjacencyList(p));
@@ -82,6 +101,11 @@ void Graph::addAdjacentPoint(Point p, Point adjacent, int weight)
            size++;
        }
     }
+    else
+    {
+        graphList.at(pointIndex(p)).addPoint(adjacent, weight);
+    }
+    
     
 }
 
