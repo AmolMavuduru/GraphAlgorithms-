@@ -21,6 +21,7 @@ class Graph
 {
 private:
     std::vector<AdjacencyList> graphList; //This list is basically an adjacency list or a list of lists of adjacent points
+    std::vector<Point> vertices;
     int size;
     
 public:
@@ -32,12 +33,15 @@ public:
     int getSize()const;
     bool findPoint(Point p);
     int pointIndex(Point p);
+    void setPtWeight(Point p, int weight);
+    AdjacencyList adjacentPoints(Point p);
+    int numAdjacentPoints(Point p);
     
-    std::vector<AdjacencyList> getList();
+    const std::vector<AdjacencyList>& getList();
+    const std::vector<Point>& vertexList();
     
     Graph(); //constructor
     Graph(std::vector<AdjacencyList> list);
-    ~Graph(); //destructor
     
     
     

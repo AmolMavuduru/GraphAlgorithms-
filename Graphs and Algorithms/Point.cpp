@@ -41,8 +41,19 @@ int Point::weight()
     return ptWeight;
 }
 
+void Point::setWeight(int newWeight)
+{
+    ptWeight = newWeight;
+}
+
 bool Point::operator==(const Point& otherPoint)const
 {
     return (name == otherPoint.name);
 }
+
+bool Point::operator!=(const Point& otherPoint)const
+{
+    return (name != otherPoint.name);
+}
+
 

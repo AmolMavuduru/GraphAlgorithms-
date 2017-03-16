@@ -14,6 +14,7 @@
 AdjacencyList::AdjacencyList()
 {
     numPoints = 0;
+    weights.push_back(0);
 }
 
 AdjacencyList::AdjacencyList(std::vector<Point> pointsList)
@@ -26,22 +27,33 @@ AdjacencyList::AdjacencyList(std::vector<Point> pointsList)
     }
     
     headPoint = adjacentPoints.at(0);
+    
+    numPoints = pointsList.size();
+}
+
+bool AdjacencyList::empty()
+{
+    return (numPoints == 0);
 }
 
 AdjacencyList::AdjacencyList(Point p)
 {
-    adjacentPoints.push_back(p);
+   adjacentPoints.reserve(10);
+   adjacentPoints.push_back(p);
     headPoint = p;
+    weights.push_back(0);
 }
 
 void AdjacencyList::addPoint(Point p, int weight)
 {
+    adjacentPoints.reserve(adjacentPoints.size() + 1);
     adjacentPoints.push_back(p);
+    weights.reserve(weights.size() + 1);
     weights.push_back(weight);
     numPoints++;
 }
 
-Point AdjacencyList::head()
+Point& AdjacencyList::head()
 {
     return headPoint;
 }
@@ -54,6 +66,25 @@ int AdjacencyList::size()
 void AdjacencyList::clear()
 {
     adjacentPoints.clear();
+}
+
+void AdjacencyList::printList()
+{
+    if(empty())
+    {
+        std::cout << "List is empty";
+    }
+    else
+    {
+        std::cout << headPoint.pointName() << " (head point) ";
+        
+        for(int i = 1; i < adjacentPoints.size(); i++)
+        {
+            std::cout << " --  Weight: "<< weights.at(i) << " -- " << adjacentPoints.at(i).pointName();
+        }
+        
+        std::cout << std::endl;
+    }
 }
 
 

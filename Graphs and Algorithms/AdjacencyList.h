@@ -20,12 +20,14 @@ private:
     int numPoints;
 public:
     void addPoint(Point p, int weight);
+    bool empty();
     AdjacencyList();
     AdjacencyList(std::vector<Point> pointsList);
     AdjacencyList(Point p);
-    Point head();
+    Point& head();
     int size();
     void clear();
+    void printList();
     
 };
 

@@ -25,8 +25,10 @@ public:
     Point();
     std::string pointName();
     int weight();
+    void setWeight(int newWeight);
     
     bool operator==(const Point& otherPoint)const;
+    bool operator!=(const Point& otherPoint)const;
     
 };
 
